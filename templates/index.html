@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Prediction by SPY</title>
+    <link href="https://fonts.googleapis.com/css?family-Pacifico" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family-Arimo" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family-Hind:300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed: 300" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }} "> -->
+</head>
+
+<body>
+    <div class="main ">
+        <div class="container ">
+            <h1>Car PRICE PREDICTION</h1>
+            <form action="{{ url_for('predict')}}" method="post">
+
+                Purchased Year:<br>
+                <input name="year" type="text " placeholder="Purchased Year (YYYY) "> <br> Odometer: <br>
+                <input name="odometer" type="text " placeholder="Odometer "><br> Manufacturer:
+                <br>
+                <select name="manufacturer">
+            <option value="19">jeep</option>
+            <option value="1" selected>bmw</option>
+            <option value="2">dodge</option>
+            <option value="3">chevrolet</option> 
+            <option value="4">ford</option>
+            <option value="5">honda</option>
+            <option value="6">nissan</option> 
+            <option value="7">subaru</option> 
+            <option value="8">gmc</option> 
+            <option value="9">volkswagen</option> 
+            <option value="10">kia</option> 
+            <option value="11">acura</option> 
+            <option value="12">ram</option> 
+            <option value="13">chrysler</option> 
+            <option value="14">hyundai</option> 
+            <option value="15">cardiliac</option> 
+            <option value="16">volvo</option> 
+            <option value="17">mercedes-benz</option> 
+            <option value="18">audi</option> 
+        </select><br> Condition:
+
+                <br>
+                <select name="condition">
+            <option value="1">New</option> 
+            <option value="2">good</option> 
+            <option value="3">excellent</option> 
+            <option value="4" selected>fair</option> 
+            <option value="5">salvage</option> 
+        </select><br> Cylinders:
+
+                <br>
+                <select name="cylinders">
+            <option value="0 ">3 cylinders</option>
+            <option value="1 " selected>4 cylinders</option>
+            <option value="2 ">5 cylinders</option>
+            <option value="3 ">6 cylinders</option>
+            <option value="4 ">8 cylinders</option>
+            <option value="5 ">10 cylinders</option>
+            <option value="6 ">12 cylinders</option>
+        </select><br> Fuel:
+
+                <br>
+                <select name="fuel">
+            <option value="1">gas</option> 
+            <option value="2">diesel</option>
+            <option value="3">hybrid</option>
+            <option value="4">electric</option>
+            <option value="5">other</option>
+            </select><br> Transmission:
+
+                <br>
+                <select name="transmission"> 
+            <option value="1">automatic</option>
+            <option value="2" selected>manual</option>
+            <option value="3">other</option>
+            </select><br> Drive:
+                <br><select name="drive">
+            <option value="1">1wd</option> 
+            <option value="2" selected>fwd</option>
+            <option value="3">rwd</option>
+            </select><br> Type: <br>
+                <select name="type">
+            <option value="1">sedan</option> 
+            <option value="2">SUV</option>
+            <option value="3">truck</option> 
+            <option value="4">pickup</option>
+            <option value="5">van</option>
+            <option value="6">coupe</option>
+            <option value="7">hatchback</option> 
+            <option value="8">wagon</option>
+            <option value="9">convertible</option>
+            <option value="10">bus</option>
+            <option value="11">mini-van</option>
+            <option value="12">offroad</option>
+            <option value="13">other</option>
+            </select><br> Color:
+                <br><select name="paint_color">
+            <option value="1">White</option> 
+            <option value="2">Black</option>   
+            <option value="3">Silver</option>            
+            <option value="4">Blue</option> 
+            <option value="5">Red</option>
+            <option value="6">Grey</option>           
+            <option value="7">Green</option>
+            <option value="8">Brown</option>
+            <option value="9">Yellow</option>
+            <option value="10">Orange</option>           
+            <option value="11">Purple</option>  
+            <option value="12">Custom</option>
+            </select><br> Size:
+                <br><select name="size">
+            <option value="1">full-size</option>
+            <option value="2">mid-size</option>
+            <option value="3">sub-compact</option>
+            <option value="4">compact</option>
+            </select><br>
+                <br>
+                <button type="submit" class="submit ">SUBMIT</button> &emsp13;
+                <button type="reset" class="reset ">RESET</button>
+                <br>
+            </form>
+            <h2>Prediction by <b>SPY</b></h2>
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    </div>
+</body>
+
+</html>
